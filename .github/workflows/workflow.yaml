@@ -1,0 +1,30 @@
+name: gcs-repo-sync
+on:
+    push:
+        branches:
+        - master
+
+env:
+    GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+    ARTIFACT_DIR: site/
+
+jobs:
+    deploy:
+        name: Deploy to GCS Bucket.
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Git Checkout
+              uses: actions/checkout@v2
+            - name: Install & Configure gcloud & gsutil
+              uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+              with:
+                project_id: ${{ secrets.GCP_PROJECT_ID }}
+                service_account_key: ${{ secrets.GCP_SA_KEY }}
+                export_default_credentials: true
+              run: |-
+                gsutil version
+            - name: GCS Sync
+              run: |-
+                cd $ARTIFACT_DIR
+                gsutil -m rsync -R output gs://$GCS_BUCKET
