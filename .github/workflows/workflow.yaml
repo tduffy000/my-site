@@ -28,4 +28,4 @@ jobs:
             - name: GCS Sync
               run: |-
                 cd $ARTIFACT_DIR
-                gsutil -m rsync -R output gs://$GC
+                gsutil -m rsync -R output gs://$GCS_BUCKET
