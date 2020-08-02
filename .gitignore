@@ -25,3 +25,9 @@ yarn-error.log*
 # Hugo files 
 site/themes/
 site/public/
+
+# terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform/gcp/account.json
