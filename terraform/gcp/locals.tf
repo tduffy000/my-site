@@ -1,5 +1,4 @@
 locals {
-  project_id       = "sage-sentry-284400"
   region           = "US"
   bucket_name      = "thomasduffy.io"
   bucket_location  = "US"
