@@ -27,5 +27,4 @@ jobs:
                 gsutil version
             - name: GCS Sync
               run: |-
-                cd $ARTIFACT_DIR
-                gsutil -m rsync -R output gs://$GCS_BUCKET
+                gsutil -m rsync -r $ARTIFACT_DIR gs://$GCS_BUCKET
