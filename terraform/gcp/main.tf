@@ -1,5 +1,3 @@
-https://github.com/gruntwork-io/terraform-google-static-assets/tree/v0.0.1/modules/cloud-storage-static-website
-
 module "static-site-bucket" {
   source = "./storage_bucket"
 

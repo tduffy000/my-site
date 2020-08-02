@@ -1,3 +1,6 @@
+/**
+  * The GCP Storage Bucket
+  */
 resource "google_storage_bucket" "static-site" {
 
   name     = var.bucket_name
@@ -16,4 +19,21 @@ resource "google_storage_bucket" "static-site" {
     response_header = ["*"]
     max_age_seconds = var.cors_max_age
   }
+}
+
+/**
+  * IAM to make it publicly accessible
+  */
+data "google_iam_policy" "public" {
+  binding {
+    role = "roles/storage.objectViewer"
+    members = [
+      "allUsers",
+    ]
+  }
+}
+
+resource "google_storage_bucket_iam_policy" "public" {
+  bucket      = google_storage_bucket.static-site.name
+  policy_data = data.google_iam_policy.public.policy_data
 }
