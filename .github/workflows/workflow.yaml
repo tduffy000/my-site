@@ -6,7 +6,7 @@ on:
 
 env:
     GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
-    ARTIFACT_DIR: site/
+    ARTIFACT_DIR: site/public/
 
 jobs:
     deploy:

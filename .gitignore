@@ -22,9 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Hugo files 
-site/themes/
-site/public/
+# Hugo themes
+site/themes
 
 # terraform
 .terraform/
