@@ -8,3 +8,9 @@ module "static-site-bucket" {
   cors_origin      = local.cors_origin
   cors_max_age     = local.cors_max_age
 }
+
+module "https_lb_to_backend_bucket" {
+  source = "./load_balancer"
+
+  bucket_name = local.bucket_name
+}
