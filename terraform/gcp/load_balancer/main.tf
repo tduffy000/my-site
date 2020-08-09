@@ -31,7 +31,7 @@ resource "google_compute_backend_bucket" "site" {
 }
 
 resource "google_compute_global_forwarding_rule" "http" {
-  name                = "http-rule"
-  target              = google_compute_target_http_proxy.main.id
-  port_range          = 80
+  name       = "http-rule"
+  target     = google_compute_target_http_proxy.main.id
+  port_range = 80
 }

@@ -6,4 +6,6 @@ locals {
   not_found_page   = "404.html"
   cors_origin      = ["http://thomasduffy.io"]
   cors_max_age     = 3600
+  dns_name         = "thomasduffy.io."
+  dns_visibility   = "public"
 }

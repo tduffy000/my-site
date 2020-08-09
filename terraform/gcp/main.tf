@@ -14,3 +14,12 @@ module "https_lb_to_backend_bucket" {
 
   bucket_name = local.bucket_name
 }
+
+module "dns" {
+  source = "./dns"
+
+  dns_name   = local.dns_name
+  visibility = local.dns_visibility
+  target_ips = [module.https_lb_to_backend_bucket.http_global_forwarding_rule_ip_address]
+  ttl        = 300
+}
