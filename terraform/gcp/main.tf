@@ -20,6 +20,9 @@ module "dns" {
 
   dns_name   = local.dns_name
   visibility = local.dns_visibility
-  target_ips = [module.https_lb_to_backend_bucket.http_global_forwarding_rule_ip_address]
+  target_ips = [
+    module.https_lb_to_backend_bucket.http_global_forwarding_rule_ip_address,
+    module.https_lb_to_backend_bucket.https_global_forwarding_rule_ip_address
+  ]
   ttl        = 300
 }

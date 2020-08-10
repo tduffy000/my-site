@@ -1,47 +1,4 @@
-baseURL = "https://thomasduffy.io"
+baseURL = "http://thomasduffy.io/"
 languageCode = "en-us"
 title = "Thomas Duffy"
-theme="archie"
-copyright = "© Athul"
-# Code Highlight
-pygmentsstyle = "monokai"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-paginate=3 # articles per page
-
-[params]
-	mode="auto" # color-mode → light,dark or auto
-	featherIconsCDN=true
-	subtitle = "A permanent tech neophyte. Data Engineer by day."
-
-# Social Tags
-
-[[params.social]]
-name = "GitHub"
-icon = "github"
-url = "https://github.com/tduffy000"
-
-[[params.social]]
-name = "Twitter"
-icon = "linkedin"
-url = "https://www.linkedin.com/in/thomas-duffy-22ba7711a/"
-
-# Main menu Items
-
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 2
-
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 3
-
-
+theme = "site-theme"
