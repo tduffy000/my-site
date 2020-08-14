@@ -1,15 +1,3 @@
-output "http_proxy_id" {
-  value = google_compute_target_http_proxy.main.id
-}
-
-output "http_proxy_proxy_id" {
-  value = google_compute_target_http_proxy.main.proxy_id
-}
-
-output "http_proxy_self_link" {
-  value = google_compute_target_http_proxy.main.self_link
-}
-
 output "https_proxy_id" {
   value = google_compute_target_https_proxy.main.id
 }
@@ -40,18 +28,6 @@ output "bucket_backend_id" {
 
 output "bucket_backend_self_link" {
   value = google_compute_backend_bucket.site.self_link
-}
-
-output "http_global_forwarding_rule_id" {
-  value = google_compute_global_forwarding_rule.http.id
-}
-
-output "http_global_forwarding_rule_ip_address" {
-  value = google_compute_global_forwarding_rule.http.ip_address
-}
-
-output "http_global_forwarding_rule_self_link" {
-  value = google_compute_global_forwarding_rule.http.self_link
 }
 
 output "https_global_forwarding_rule_id" {

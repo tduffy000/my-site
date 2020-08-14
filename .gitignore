@@ -24,7 +24,7 @@ yarn-error.log*
 
 # terraform
 .terraform/
-terraform.tfstate
+terraform.tfstate*
 terraform.tfstate.backup
 terraform/gcp/account.json
 tf_cmd.sh
