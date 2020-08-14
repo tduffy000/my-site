@@ -1,3 +1,10 @@
+resource "google_compute_backend_bucket" "site" {
+  name        = "static-bucket"
+  bucket_name = var.bucket_name
+  enable_cdn  = false
+}
+
+/** ROOT */
 resource "google_compute_managed_ssl_certificate" "main" {
   provider = google-beta
 
@@ -34,14 +41,31 @@ resource "google_compute_url_map" "bucket" {
   }
 }
 
-resource "google_compute_backend_bucket" "site" {
-  name        = "static-bucket"
-  bucket_name = var.bucket_name
-  enable_cdn  = false
-}
-
 resource "google_compute_global_forwarding_rule" "https" {
   name       = "https-rule"
   target     = google_compute_target_https_proxy.main.id
+  port_range = 443
+}
+
+/** WWW */
+resource "google_compute_managed_ssl_certificate" "www" {
+  provider = google-beta
+
+  name = "site-www-ssl-cert"
+
+  managed {
+    domains = ["www.thomasduffy.io."]
+  }
+}
+
+resource "google_compute_target_https_proxy" "www" {
+  name             = "my-site-www-https-proxy"
+  url_map          = google_compute_url_map.bucket.id
+  ssl_certificates = [google_compute_managed_ssl_certificate.www.id]
+}
+
+resource "google_compute_global_forwarding_rule" "www-https" {
+  name       = "www-https-rule"
+  target     = google_compute_target_https_proxy.www.id
   port_range = 443
 }

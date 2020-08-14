@@ -41,3 +41,7 @@ output "https_global_forwarding_rule_ip_address" {
 output "https_global_forwarding_rule_self_link" {
   value = google_compute_global_forwarding_rule.https.self_link
 }
+
+output "www_https_global_forwarding_rule_ip_address" {
+  value = google_compute_global_forwarding_rule.www-https.ip_address
+}
