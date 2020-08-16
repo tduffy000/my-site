@@ -45,3 +45,11 @@ output "https_global_forwarding_rule_self_link" {
 output "www_https_global_forwarding_rule_ip_address" {
   value = google_compute_global_forwarding_rule.www-https.ip_address
 }
+
+output "static_external_ip_address_self_link" {
+  value = google_compute_global_address.site.self_link
+}
+
+output "static_external_ip_address" {
+  value = google_compute_global_address.site.address
+}
