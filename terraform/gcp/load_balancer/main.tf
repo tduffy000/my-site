@@ -4,9 +4,15 @@ resource "google_compute_backend_bucket" "site" {
   enable_cdn  = false
 }
 
-resource "google_compute_global_address" "site" {
-  name         = "site-external-address"
-  ip_version   = "IPV4" # need one for IPV6?
+resource "google_compute_global_address" "www-site" {
+  name         = "www-site-external-address"
+  ip_version   = "IPV4"
+  address_type = "EXTERNAL"
+}
+
+resource "google_compute_global_address" "root-site" {
+  name         = "root-site-external-address"
+  ip_version   = "IPV4"
   address_type = "EXTERNAL"
 }
 
@@ -51,6 +57,7 @@ resource "google_compute_global_forwarding_rule" "https" {
   name       = "https-rule"
   target     = google_compute_target_https_proxy.main.id
   port_range = 443
+  ip_address = google_compute_global_address.root-site.address
 }
 
 /** WWW */
@@ -74,7 +81,7 @@ resource "google_compute_global_forwarding_rule" "www-https" {
   name       = "www-https-rule"
   target     = google_compute_target_https_proxy.www.id
   port_range = 443
-  ip_address = google_compute_global_address.site.address
+  ip_address = google_compute_global_address.www-site.address
 }
 
 /** HTTP(S) Redirect*/
@@ -95,6 +102,17 @@ resource "google_compute_global_forwarding_rule" "www-http" {
   name       = "www-http-rule"
   target     = google_compute_target_http_proxy.www.id
   port_range = 80
-  ip_address = google_compute_global_address.site.address
+  ip_address = google_compute_global_address.www-site.address
 }
 
+resource "google_compute_target_http_proxy" "root" {
+  name    = "my-site-root-http-proxy"
+  url_map = google_compute_url_map.redirect.id
+}
+
+resource "google_compute_global_forwarding_rule" "root-http" {
+  name       = "root-http-rule"
+  target     = google_compute_target_http_proxy.root.id
+  port_range = 80
+  ip_address = google_compute_global_address.root-site.address
+}

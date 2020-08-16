@@ -54,12 +54,12 @@ output "https_global_forwarding_rule_self_link" {
   value = module.https_lb_to_backend_bucket.https_global_forwarding_rule_self_link
 }
 
-output "static_external_ip_address_self_link" {
-  value = module.https_lb_to_backend_bucket.static_external_ip_address_self_link
+output "www_static_external_ip_address" {
+  value = module.https_lb_to_backend_bucket.www_static_external_ip_address
 }
 
-output "static_external_ip_address" {
-  value = module.https_lb_to_backend_bucket.static_external_ip_address
+output "root_static_external_ip_address" {
+  value = module.https_lb_to_backend_bucket.root_static_external_ip_address
 }
 
 output "dns_managed_zone_id" {
