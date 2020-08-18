@@ -1,4 +1,4 @@
-baseURL = "http://thomasduffy.io/"
+baseURL = "https://www.thomasduffy.io/"
 languageCode = "en-us"
 title = "Thomas Duffy"
 theme = "site-theme"
