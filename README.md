@@ -22,4 +22,6 @@ Here we've made use of the following secrets that you can add to a GitHub reposi
 * `GCS_BUCKET`: The name of the bucket you provisioned (should be equivalent to your site's URL)
 
 ### Hugo
-<< TODO >>
+<< TODO intro >>
+
+This is built on top of the Whisper [theme](https://github.com/zerostaticthemes/hugo-whisper-theme) created by [Zerostatic](https://www.zerostatic.io/).
