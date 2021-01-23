@@ -28,3 +28,6 @@ terraform.tfstate*
 terraform.tfstate.backup
 terraform/gcp/account.json
 tf_cmd.sh
+
+# VS Code
+.vscode
