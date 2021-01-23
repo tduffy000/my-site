@@ -1,5 +1,0 @@
----
-title: 'Post One'
----
-
-Hello!
