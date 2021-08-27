@@ -1,19 +1,42 @@
 body {
     background-color: white;
 }
-h1 {
-    color: blue;
+.name {
+    color:rgb(42, 104, 13)
 }
-h2 {
-    color: rgb(31, 184, 235);
-}
-p {
-    color: red;
-}
+
 .navBar {
     color:rgb(31, 184, 235);
-    border: 5px outset rgb(191, 248, 58);
+    border: 5px inset rgb(191, 248, 58);
+    border-radius: 10px;
     text-align: center;
     float: left;
     width: 100px;
+}
+.postTitle {
+    color:rgb(2, 54, 71);
+    border-bottom: 5px groove rgb(212, 45, 87);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    float: center;
+}
+.postBody {
+    float: center;
+}
+.postList {
+    width: 50%;
+    text-align: center;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* https://www.w3schools.com/Css/css_table_style.asp */
+tr:hover {
+    background-color: rgb(31, 184, 235);
 }
