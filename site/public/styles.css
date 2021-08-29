@@ -21,14 +21,19 @@ body {
 .siteName:active {
     text-decoration: none;
 }
-
+.selfImage {
+    text-align: center;
+    float: center;
+}
 .pageName {
     color:rgb(192, 45, 212);
     font-family: "Monaco", "Lucida Console", "monospace";
+    font-size: xx-large;
 }
 .navBar {
     color:rgb(31, 184, 235);
     font-family: "Monaco", "Lucida Console", "monospace";
+    font-size: large;
     border: 5px inset rgb(41, 202, 252);
     border-radius: 10px;
     text-align: center;
