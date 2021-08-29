@@ -5,32 +5,38 @@ body {
 }
 
 /* SITE TITLE */
-.siteName {
+h1.siteName {
     color:rgb(0, 0, 0);
     font-family: "Monaco", "Lucida Console", "monospace"; 
 }
-.siteName:link {
+h1.siteName:link {
     text-decoration: none;
 }
-.siteName:visited {
+h1.siteName:visited {
     text-decoration: none;
 }
-.siteName:hover {
+h1.siteName:hover {
     text-decoration: none;
 }
-.siteName:active {
+h1.siteName:active {
     text-decoration: none;
 }
-.selfImage {
+span.img {
     text-align: center;
-    float: center;
+    float: left;
 }
-.pageName {
+span.about {
+    text-emphasis: left;
+    float: left;
+}
+
+/* Left bar elements */
+h2.pageName {
     color:rgb(192, 45, 212);
     font-family: "Monaco", "Lucida Console", "monospace";
     font-size: xx-large;
 }
-.navBar {
+div.navBar {
     color:rgb(31, 184, 235);
     font-family: "Monaco", "Lucida Console", "monospace";
     font-size: large;
@@ -40,7 +46,10 @@ body {
     float: left;
     width: 100px;
 }
-.postTitle {
+
+
+/* Post elements */
+div.postTitle {
     color:rgb(2, 54, 71);
     border-bottom: 5px groove rgb(212, 45, 87);
     font-family: "Monaco", "Lucida Console", "monospace";
@@ -50,11 +59,11 @@ body {
     width: 50em;
     float: center;
 }
-.postBody {
+div.postBody {
     float: center;
     font-family: "Georgia", "serif";
 }
-.postList {
+div.postList {
     width: 50%;
     text-align: center;
     float: center;
@@ -64,6 +73,6 @@ body {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
-.postList:hover {
+div.postList:hover {
     background-color: rgb(165, 217, 235);
 }
