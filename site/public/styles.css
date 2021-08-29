@@ -21,13 +21,18 @@ h1.siteName:hover {
 h1.siteName:active {
     text-decoration: none;
 }
+
 span.img {
     text-align: center;
     float: left;
+    margin-left: 5%;
 }
 span.about {
     text-emphasis: left;
     float: left;
+    margin-left: 5%;
+    font-size: large;
+    width: 20%;
 }
 
 /* Left bar elements */
