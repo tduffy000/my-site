@@ -3,10 +3,25 @@
 body {
     background-color: white;
 }
+
+/* SITE TITLE */
 .siteName {
     color:rgb(0, 0, 0);
     font-family: "Monaco", "Lucida Console", "monospace"; 
 }
+.siteName:link {
+    text-decoration: none;
+}
+.siteName:visited {
+    text-decoration: none;
+}
+.siteName:hover {
+    text-decoration: none;
+}
+.siteName:active {
+    text-decoration: none;
+}
+
 .pageName {
     color:rgb(192, 45, 212);
     font-family: "Monaco", "Lucida Console", "monospace";
