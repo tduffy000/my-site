@@ -1,19 +1,83 @@
+/* https://css-tricks.com/dark-modes-with-css/ */
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists */
 body {
     background-color: white;
 }
-h1 {
-    color: blue;
+
+/* SITE TITLE */
+h1.siteName {
+    color:rgb(0, 0, 0);
+    font-family: "Monaco", "Lucida Console", "monospace"; 
 }
-h2 {
-    color: rgb(31, 184, 235);
+h1.siteName:link {
+    text-decoration: none;
 }
-p {
-    color: red;
+h1.siteName:visited {
+    text-decoration: none;
 }
-.navBar {
+h1.siteName:hover {
+    text-decoration: none;
+}
+h1.siteName:active {
+    text-decoration: none;
+}
+
+span.img {
+    text-align: center;
+    float: left;
+    margin-left: 5%;
+}
+span.about {
+    text-emphasis: left;
+    float: left;
+    margin-left: 5%;
+    font-size: large;
+    width: 20%;
+}
+
+/* Left bar elements */
+h2.pageName {
+    color:rgb(192, 45, 212);
+    font-family: "Monaco", "Lucida Console", "monospace";
+    font-size: xx-large;
+}
+div.navBar {
     color:rgb(31, 184, 235);
-    border: 5px outset rgb(191, 248, 58);
+    font-family: "Monaco", "Lucida Console", "monospace";
+    font-size: large;
+    border: 5px inset rgb(41, 202, 252);
+    border-radius: 10px;
     text-align: center;
     float: left;
     width: 100px;
+}
+
+
+/* Post elements */
+div.postTitle {
+    color:rgb(2, 54, 71);
+    border-bottom: 5px groove rgb(212, 45, 87);
+    font-family: "Monaco", "Lucida Console", "monospace";
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    float: center;
+}
+div.postBody {
+    float: center;
+    font-family: "Georgia", "serif";
+}
+div.postList {
+    width: 50%;
+    text-align: center;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+div.postList:hover {
+    background-color: rgb(165, 217, 235);
 }
